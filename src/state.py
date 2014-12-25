@@ -12,7 +12,7 @@ class State:
         self.state = self.STATE_NORMAL
         self.stateMessage = None
         self.command = None
-    
+
     # Returns current state as array
     def getState(self):
         self.update()
@@ -36,11 +36,11 @@ class State:
         maxValue = max(values)
 
         if maxValue >= self.THRESHOLD_CRITICAL:
-            self.state = self.STATE_CRITICAL 
+            self.state = self.STATE_CRITICAL
             return
 
         if maxValue >= self.THRESHOLD_WARNING:
-            self.state = self.STATE_WARNING 
+            self.state = self.STATE_WARNING
             return
 
         self.state = self.STATE_NORMAL

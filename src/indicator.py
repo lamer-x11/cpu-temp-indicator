@@ -53,19 +53,19 @@ class Indicator:
         self.createIcon()
         gobject.timeout_add(1000, self.update)
 
-    # Updates the indicator 
+    # Updates the indicator
     def update(self):
         data = self.state.getState()
 
         self.icon.set_tooltip(data['message'])
 
         if data['state'] == self.state.STATE_CRITICAL:
-            self.icon.set_from_pixbuf(self.iconCritical) 
+            self.icon.set_from_pixbuf(self.iconCritical)
             return True
 
         if data['state'] == self.state.STATE_WARNING:
-            self.icon.set_from_pixbuf(self.iconWarning) 
+            self.icon.set_from_pixbuf(self.iconWarning)
             return True
 
-        self.icon.set_from_pixbuf(self.iconRegular) 
+        self.icon.set_from_pixbuf(self.iconRegular)
         return True
