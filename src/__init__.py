@@ -11,7 +11,7 @@ from temperature import GetTemperatureCommand
 class TempNotificator:
     # Daemonizes the process
     def deamonize(self):
-        
+
         self.fork()
 
         os.chdir('/')
@@ -34,7 +34,7 @@ class TempNotificator:
             if pid > 0:
                 os._exit(0)
         except OSError:
-            return        
+            return
 
     # Starts the indicator
     def start(self):
@@ -44,7 +44,7 @@ class TempNotificator:
 
         state.setCommand(command)
         indicator.setState(state)
-        
+
         indicator.start()
         gtk.main()
 
